@@ -1,0 +1,5 @@
+{#
+    Atom: Image
+    Usage: {% include 'components/atoms/image.html.twig' with {src: '/images/wine.jpg', alt: 'Bouteille de vin'} %}
+#}
+<img src="{{ src }}" alt="{{ alt|default('') }}" class="image {{ class|default('') }}" {% if width is defined and width %} width="{{ width }}" {% endif %} {% if height is defined and height %} height="{{ height }}" {% endif %}/>

@@ -1,0 +1,7 @@
+{#
+    Atom: Heading
+    Usage: {% include 'components/atoms/heading.html.twig' with {text: 'Titre', level: 1} %}
+#}
+<h{{level|default(1)}} class="heading heading-{{ level|default(1) }} {{ class|default('') }}">
+	{{ text }}
+</h{{level|default(1)}}>

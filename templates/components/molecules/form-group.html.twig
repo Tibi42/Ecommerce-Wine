@@ -1,0 +1,13 @@
+{#
+    Molecule: Form Group
+    Usage: {% include 'components/molecules/form-group.html.twig' with {label: 'Email', name: 'email', type: 'email'} %}
+#}
+<div class="form-group {{ class|default('') }}">
+	{% if label %}
+		{% include 'components/atoms/label.html.twig' with {text: label, for: name, required: required|default(false)} %}
+	{% endif %}
+	{% include 'components/atoms/input.html.twig' with {name: name, type: type|default('text'), placeholder: placeholder|default(''), value: value|default(''), required: required|default(false), id: id|default(name)} %}
+	{% if error %}
+		<span class="error-message">{{ error }}</span>
+	{% endif %}
+</div>

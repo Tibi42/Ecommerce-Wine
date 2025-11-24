@@ -1,0 +1,10 @@
+{#
+    Atom: Label
+    Usage: {% include 'components/atoms/label.html.twig' with {text: 'Email', for: 'email'} %}
+#}
+<label for="{{ for }}" class="label {{ class|default('') }}">
+	{{ text }}
+	{% if required %}
+		<span class="required">*</span>
+	{% endif %}
+</label>

@@ -1,0 +1,5 @@
+{#
+    Atom: Input
+    Usage: {% include 'components/atoms/input.html.twig' with {name: 'email', type: 'email', placeholder: 'Votre email'} %}
+#}
+<input type="{{ type|default('text') }}" name="{{ name }}" id="{{ id|default(name) }}" class="input {{ class|default('') }}" placeholder="{{ placeholder|default('') }}" value="{{ value|default('') }}" {% if required %} required {% endif %} {% if disabled %} disabled {% endif %}/>

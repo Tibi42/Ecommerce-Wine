@@ -1,0 +1,24 @@
+{#
+    Molecule: Bottle Card (spécifique au projet e-commerce de vin)
+    Usage: {% include 'components/molecules/bottle-card.html.twig' with {bottle: bottle} %}
+#}
+<div class="bottle-card {{ class|default('') }}">
+	{% if bottle.imgurl %}
+		<div class="bottle-card__image">
+			{% include 'components/atoms/image.html.twig' with {src: bottle.imgurl, alt: bottle.designation} %}
+		</div>
+	{% endif %}
+	<div class="bottle-card__content">
+		{% include 'components/atoms/heading.html.twig' with {text: bottle.designation, level: 3} %}
+		{% if bottle.description %}
+			<p class="bottle-card__description">{{ bottle.description }}</p>
+		{% endif %}
+		{% if bottle.price %}
+			<div class="bottle-card__price">{{ bottle.price|number_format(2, ',', ' ') }}
+				€</div>
+		{% endif %}
+		<div class="bottle-card__actions">
+			{% include 'components/atoms/button.html.twig' with {text: 'Ajouter au panier', variant: 'primary', type: 'button'} %}
+		</div>
+	</div>
+</div>

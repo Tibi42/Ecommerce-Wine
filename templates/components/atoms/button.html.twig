@@ -1,0 +1,7 @@
+{#
+    Atom: Button
+    Usage: {% include 'components/atoms/button.html.twig' with {text: 'Cliquer', variant: 'primary', type: 'button'} %}
+#}
+<button type="{{ type|default('button') }}" class="btn btn-{{ variant|default('primary') }} {{ class|default('') }}">
+	{{ text|default('Button') }}
+</button>

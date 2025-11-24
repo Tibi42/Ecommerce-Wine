@@ -1,0 +1,21 @@
+{#
+    Page: Home
+    Usage: {% extends 'layouts/default.html.twig' %}
+#}
+{% extends 'layouts/default.html.twig' %}
+
+{% block title %}Accueil - EcommerceWine
+{% endblock %}
+
+{% block body %}
+	<section class="hero">
+		<div class="hero__container">
+			{% include 'components/atoms/heading.html.twig' with {text: 'Bienvenue sur EcommerceWine', level: 1} %}
+			<p class="hero__subtitle">Découvrez notre sélection de vins d'exception</p>
+		</div>
+	</section>
+
+	{% if bottles is defined and bottles is not empty %}
+		{% include 'components/organisms/product-grid.html.twig' with {bottles: bottles} %}
+	{% endif %}
+{% endblock %}

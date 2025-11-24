@@ -1,0 +1,28 @@
+{#
+    Organism: Footer
+    Usage: {% include 'components/organisms/footer.html.twig' %}
+#}
+<footer class="footer {{ class|default('') }}">
+	<div class="footer__container">
+		<div class="footer__section">
+			<h3>À propos</h3>
+			<p>Votre boutique de vins en ligne</p>
+		</div>
+		<div class="footer__section">
+			<h3>Contact</h3>
+			<p>Email: contact@ecommercewine.fr</p>
+		</div>
+		<div class="footer__section">
+			<h3>Liens utiles</h3>
+			<ul>
+				<li><a href="#">Mentions légales</a></li>
+				<li><a href="#">CGV</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="footer__copyright">
+		<p>&copy;
+			{{ 'now'|date('Y') }}
+			EcommerceWine. Tous droits réservés.</p>
+	</div>
+</footer>

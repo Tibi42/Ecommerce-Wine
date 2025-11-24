@@ -1,0 +1,22 @@
+{#
+    Organism: Header
+    Usage: {% include 'components/organisms/header.html.twig' %}
+#}
+<header class="header {{ class|default('') }}">
+	<div class="header__container">
+		<div class="header__logo">
+			{% include 'components/atoms/heading.html.twig' with {text: 'EcommerceWine', level: 1, class: 'header__title'} %}
+		</div>
+		<nav class="header__nav">
+			<ul class="nav-list">
+				<li class="nav-list__item">
+					<a href="{{ path('app_home') }}" class="nav-link">Accueil</a>
+				</li>
+				{# Ajoutez d'autres liens de navigation ici #}
+			</ul>
+		</nav>
+		<div
+			class="header__actions">{# Panier, compte utilisateur, etc. #}
+		</div>
+	</div>
+</header>

@@ -12,9 +12,9 @@ final class HomeController extends AbstractController
     public function index(\App\Repository\BottleRepository $bottleRepository): Response
     {
         $bottles = $bottleRepository->findAllWines();
-        
-        return $this->render('home/index.html.twig', [
-            'controller_name' => 'Best French Wines',
+
+        return $this->render('pages/home.html.twig', [
+            'bottles' => $bottles,
         ]);
     }
 }

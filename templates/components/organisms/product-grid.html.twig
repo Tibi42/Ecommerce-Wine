@@ -1,0 +1,17 @@
+{#
+    Organism: Product Grid
+    Usage: {% include 'components/organisms/product-grid.html.twig' with {bottles: bottles} %}
+#}
+<section class="product-grid {{ class|default('') }}">
+	<div class="product-grid__container">
+		{% if bottles is not empty %}
+			{% for bottle in bottles %}
+				<div class="product-grid__item">
+					{% include 'components/molecules/bottle-card.html.twig' with {bottle: bottle} %}
+				</div>
+			{% endfor %}
+		{% else %}
+			<p class="product-grid__empty">Aucun produit disponible</p>
+		{% endif %}
+	</div>
+</section>
