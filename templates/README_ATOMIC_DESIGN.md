@@ -126,3 +126,4 @@ return $this->render('pages/home.html.twig', [
 4. Documenter les props de chaque composant
 
 
+

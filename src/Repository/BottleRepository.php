@@ -45,4 +45,18 @@ class BottleRepository extends ServiceEntityRepository
         return $this->findAll();
     }
 
+    /**
+     * @return Bottle[] Returns an array of Bottle objects filtered by designation
+     */
+    public function findByDesignation(string $designation): array
+    {
+        return $this->createQueryBuilder('b')
+            ->andWhere('b.designation = :val')
+            ->setParameter('val', $designation)
+            ->orderBy('b.id', 'ASC')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
 }

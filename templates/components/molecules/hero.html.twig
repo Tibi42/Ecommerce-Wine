@@ -1,0 +1,39 @@
+{#
+    Molecule: Hero
+    Usage: {% include 'components/molecules/hero.html.twig' with {
+        title: 'Bienvenue sur EcommerceWine',
+        subtitle: 'Découvrez notre sélection de vins d\'exception',
+        ctaText: 'Découvrir nos vins',
+        ctaLink: '#products',
+        ctaVariant: 'primary'
+    } %}
+#}
+<section class="hero {{ class|default('') }}" {% if backgroundImage is defined and backgroundImage %} style="background-image: url('{{ backgroundImage }}');" {% endif %}>
+	<div class="hero__container">
+		{% if title %}
+			{% include 'components/atoms/heading.html.twig' with {
+				text: title,
+				level: 1,
+				class: 'hero__title'
+			} %}
+		{% endif %}
+		{% if subtitle %}
+			<p class="hero__subtitle">{{ subtitle }}</p>
+		{% endif %}
+		{% if ctaText %}
+			<div class="hero__cta">
+				{% if ctaLink %}
+					<a href="{{ ctaLink }}" class="btn btn-{{ ctaVariant|default('primary') }} {{ ctaClass|default('') }}">
+						{{ ctaText }}
+					</a>
+				{% else %}
+					{% include 'components/atoms/button.html.twig' with {
+						text: ctaText,
+						variant: ctaVariant|default('primary'),
+						class: ctaClass|default('')
+					} %}
+				{% endif %}
+			</div>
+		{% endif %}
+	</div>
+</section>

@@ -13,12 +13,5 @@
 		{% if bottle.description %}
 			<p class="bottle-card__description">{{ bottle.description }}</p>
 		{% endif %}
-		{% if bottle.price %}
-			<div class="bottle-card__price">{{ bottle.price|number_format(2, ',', ' ') }}
-				€</div>
-		{% endif %}
-		<div class="bottle-card__actions">
-			{% include 'components/atoms/button.html.twig' with {text: 'Ajouter au panier', variant: 'primary', type: 'button'} %}
-		</div>
 	</div>
 </div>

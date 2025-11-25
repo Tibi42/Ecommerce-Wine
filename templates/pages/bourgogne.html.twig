@@ -1,17 +1,17 @@
 {#
-    Page: Home
+    Page: Bourgogne
     Usage: {% extends 'layouts/default.html.twig' %}
 #}
 {% extends 'layouts/default.html.twig' %}
 
-{% block title %}Accueil - EcommerceWine
+{% block title %}Bourgogne - EcommerceWine
 {% endblock %}
 
 {% block body %}
 {# Section Hero #}
 {% include 'components/molecules/hero.html.twig' with {
-		title: 'Bienvenue sur EcommerceWine',
-		subtitle: 'Découvrez notre sélection de vins d\'exception',
+		title: 'Vins de Bourgogne',
+		subtitle: 'Découvrez les vins d\'exception de la région de Bourgogne',
 		ctaText: 'Découvrir nos vins',
 		ctaLink: '#products',
 		ctaVariant: 'primary'
@@ -21,7 +21,7 @@
 	<section id="products" class="products-section">
 		<div class="products-section__container">
 			{% include 'components/atoms/heading.html.twig' with {
-				text: 'Notre Sélection de Vins',
+				text: 'Notre Sélection de Vins de Bourgogne',
 				level: 2,
 				class: 'products-section__title'
 			} %}
@@ -30,24 +30,28 @@
 				{% include 'components/organisms/product-grid.html.twig' with {bottles: bottles} %}
 			{% else %}
 				<div class="products-section__empty">
-					<p>Aucun produit disponible pour le moment.</p>
+					<p>Aucun vin de Bourgogne disponible pour le moment.</p>
 				</div>
 			{% endif %}
 		</div>
 	</section>
 
-	{# Section À propos (optionnelle) #}
+	{# Section À propos de la Bourgogne #}
 	<section class="about-section">
 		<div class="about-section__container">
 			{% include 'components/atoms/heading.html.twig' with {
-				text: 'À Propos de Nous',
+				text: 'À Propos de la Bourgogne',
 				level: 2,
 				class: 'about-section__title'
 			} %}
 			<div class="about-section__content">
 				<p class="about-section__text">
-					EcommerceWine est votre destination privilégiée pour découvrir des vins d'exception. 
-					Nous sélectionnons avec soin chaque bouteille pour vous offrir une expérience &oelig;nologique unique.
+					La Bourgogne est l'une des régions viticoles les plus prestigieuses de France, 
+					reconnue dans le monde entier pour ses vins d'exception. Cette région produit 
+					des vins élégants et raffinés, principalement à base de Pinot Noir pour les 
+					rouges et de Chardonnay pour les blancs. Les terroirs de Bourgogne, avec leurs 
+					climats uniques, confèrent à chaque vin une personnalité distincte et une 
+					complexité aromatique remarquable.
 				</p>
 			</div>
 		</div>
@@ -161,7 +165,18 @@
 		}
 
 
+		.about-section {
+			padding: 4rem 2rem;
+			background-color: #ffffff;
+		}
+
+		.about-section__container {
+			max-width: 1200px;
+			margin: 0 auto;
+		}
+
 		.about-section__title {
+			text-align: center;
 			margin-bottom: 2rem;
 			color: #333;
 			font-size: 2rem;
@@ -171,6 +186,9 @@
 			font-size: 1.125rem;
 			line-height: 1.8;
 			color: #666;
+			text-align: center;
+			max-width: 800px;
+			margin: 0 auto;
 		}
 
 		@media(max-width: 768px) {
@@ -198,3 +216,4 @@
 		}
 	</style>
 {% endblock %}
+
