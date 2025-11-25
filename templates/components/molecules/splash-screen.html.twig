@@ -43,6 +43,14 @@ const splashScreen = document.getElementById('splashScreen');
 const redirectUrl = '{{ redirectUrl|default('/') }}';
 const delay = {{ delay|default(3000) }};
 
+// Vérifier si c'est la première visite
+const hasVisited = localStorage.getItem('ecommerceWine_hasVisited');
+
+if (hasVisited) { // Si l'utilisateur a déjà visité, rediriger immédiatement vers home
+window.location.href = redirectUrl;
+} else { // Première visite : afficher le splash et marquer la visite
+localStorage.setItem('ecommerceWine_hasVisited', 'true');
+
 if (splashScreen) {
 setTimeout(function () {
 splashScreen.style.opacity = '0';
@@ -52,6 +60,7 @@ setTimeout(function () {
 window.location.href = redirectUrl;
 }, 500);
 }, delay);
+}
 }
 })();
 </script>
